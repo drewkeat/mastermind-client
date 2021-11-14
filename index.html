@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <template id="newBoard">
+        <div id="board">
+            <div id="board-head">
+                <b>Combination</b>
+                <div class="row">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+            </div>
+            <div id="board-guesses">
+                Guesses
+                <div id="guessRow1" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow2" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow3" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow4" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow5" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow6" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow7" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow8" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow9" class="guess-row">
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button hidden>Check Guess</button>
+                    </div>
+                </div>
+                <div id="guessRow10" class="guess-row" data-active-row>
+                    <div class="feedback-box">
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                        <div class="feedback hole"></div>
+                    </div>
+                    <div class="row">
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                        <div class="hole"></div>
+                    </div>
+                    <div class="action-box">
+                        <button>Check Guess</button>
+                    </div>
+                </div>
+            </div>
+            <div id="board-footer">
+                Peg Collection
+                <div class="peg-tray">
+                    <div class="peg color-1" draggable="true"></div>
+                    <div class="peg color-2" draggable="true"></div>
+                    <div class="peg color-3" draggable="true"></div>
+                    <div class="peg color-4" draggable="true"></div>
+                    <div class="peg color-5" draggable="true"></div>
+                    <div class="peg color-6" draggable="true"></div>
+                    <div class="peg color-7" draggable="true"></div>
+                    <div class="peg color-8" draggable="true"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div id="main-wrapper">
+        <header>
+            <h1 style="text-align: center; text-shadow: -9px 5px 5px whitesmoke;">Current Mastermind</h1>
+            <h1 id="mastermindName" style="text-align: center; text-shadow: -9px 5px 5px lime;">User</h1>
+        </header>
+        <sidebar>
+            <div id="scoreBoard">
+                <h1>Current Score</h1>
+                <h1 id="gameScore"></h1>
+                <h3>User Average</h3>
+                <h3 id="avgScore"><i>Must be logged in</i></h3>
+            </div>
+            <h2>Log In to Compete for High Scores</h2>
+            <button id="openSignup" value="signup">Sign Up/Log In</button>
+            <button id="showScores" value="">High Scores</button>
+            <div class="instructions-box" style="text-align: left;">
+                <hr>
+                <h3 style="text-align: center;">How to Play:</h3>
+                <hr>
+                <p>
+                    <b>Goal:</b> <br>
+                    Guess the secret combination hidden under the boxes at the top of the board. <br><br> <i>Can you guess the right colors in the right order?</i> <br> <br>
+                    <b>Directions:</b> <br>
+                    1) Drag colored pegs into one of the empty holes on the "guess row".  Then click the "check guess" button. <br>
+                    2) Use the feedback to help you deduce the correct combination. <br><br>
+                    <b>Feedback Pegs:</b>
+                            <p style="color: black">BLACK:</p> One of your pegs is the correct color, but not in the right place. <br>
+                            <p style="color: red">RED:</p> One of your pegs is the right color, and in the right place! <br><br>
+                    Try to get 4 RED PEGS!
+                </p>
+            </div>
+        </sidebar>
+        <main>
+        </main>
+        <footer>
+            <h3>KeatDev ©2021</h3>
+        </footer>
+    </div>
+    <script src="src/appContainer.js"></script>
+    <script src="src/game.js"></script>
+    <script src="src/user.js"></script>
+    <script src="src/signupForm.js"></script>
+    <script src="src/popup.js"></script>
+    <script src="src/index.js" defer></script>
+</body>
+</html>
