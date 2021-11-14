@@ -1,6 +1,6 @@
 class AppContainer {
     constructor() {
-        this.url = 'http://localhost:3000';
+        this.url = 'https://dk-mastermind-api.herokuapp.com';
         this.user = {};
         this.game = new Game();
     }
